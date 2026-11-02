@@ -7,7 +7,7 @@
     <meta name="apple-itunes-app" content="app-id=6827716801">
     <title>Kupfra: Construction & Electrical Calculator</title>
     <meta name="description" content="Kupfra is an all-in-one construction and electrical calculator for electricians, builders and DIY: a 3D stair designer with cut list and client PDF, cable and breaker sizing to IEC 60364, BS 7671 or the NEC, and concrete, tile, paint and roof calculators. 45 languages.">
-    <meta name="theme-color" content="#0C0B0A">
+    <meta name="theme-color" content="#0E0C0B">
     <meta name="color-scheme" content="dark">
     <link rel="canonical" href="https://kupfra.com/">
     <meta property="og:type" content="website">
@@ -27,10 +27,11 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="stylesheet" href="/styles.css?v=1">
+    <link rel="preload" href="/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/styles.css?v=2">
     <script>document.documentElement.classList.add("js")</script>
     <!-- /build:head -->
-    <link rel="preload" as="image" type="image/webp" href="/img/shot-home-600.webp" imagesrcset="/img/shot-home-360.webp 360w, /img/shot-home-600.webp 600w" imagesizes="(min-width: 768px) 300px, 70vw">
+    <link rel="preload" as="image" type="image/webp" href="/img/shot-home-600.webp" imagesrcset="/img/shot-home-360.webp 360w, /img/shot-home-600.webp 600w" imagesizes="(min-width: 960px) 250px, 46vw" fetchpriority="high">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -57,7 +58,8 @@
             </a>
             <nav class="nav" aria-label="Main">
                 <ul class="nav-links">
-                    <li><a href="/#tools">Tools</a></li>
+                    <li><a href="/#modules">Modules</a></li>
+                    <li><a href="/#calculators">Calculators</a></li>
                     <li><a href="/#stairs">Stairs</a></li>
                     <li><a href="/#price">Free and unlock</a></li>
                     <li><a href="/#questions">Questions</a></li>
@@ -70,88 +72,179 @@
 
     <main id="main">
         <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-glow" aria-hidden="true"></div>
             <div class="wrap hero-grid">
                 <div class="hero-copy">
-                    <p class="eyebrow">Construction and electrical calculator for iPhone</p>
-                    <h1 id="hero-title"><span class="line">Stairs, cables</span> <span class="line">and concrete.</span></h1>
-                    <p class="hero-sub">One toolkit for electricians, builders and DIY: a stair designed in 3D, the right cable and breaker, and the materials for the job, with the working shown.</p>
+                    <h1 id="hero-title"><span class="line"><span>Stairs,</span></span> <span class="line"><span>cables and</span></span> <span class="line"><span>concrete.</span></span></h1>
+                    <p class="hero-sub"><strong>The construction and electrical calculator for iPhone.</strong> One toolkit for electricians, builders and DIY: a stair designed in 3D, the right cable and breaker, and the materials for the job, with the working shown.</p>
                     <div class="hero-cta">
                         <a class="badge" href="https://apps.apple.com/app/id6827716801"><img src="/img/app-store-black-en-us.svg" width="135" height="45" alt="Download Kupfra on the App Store"></a>
                         <p class="small">Free to start. Unlock everything with a subscription or once for life.</p>
                     </div>
                 </div>
-                <div class="hero-media">
-                    <div class="device">
-                            <div class="screen"><img src="/img/shot-home-600.webp" srcset="/img/shot-home-360.webp 360w, /img/shot-home-600.webp 600w" sizes="(min-width: 768px) 300px, 70vw" width="600" height="1304" alt="The Kupfra home screen: the Stairs, Electrical and Construction modules over a lit stair, with the current stair at 16 risers of 175 mm." fetchpriority="high"></div>
-                            <img class="frame" src="/img/frame-iphone-490.webp" srcset="/img/frame-iphone-490.webp 490w, /img/frame-iphone-980.webp 980w" sizes="(min-width: 768px) 300px, 70vw" width="1470" height="3000" alt="" aria-hidden="true">
-                        </div>
+                <div class="stage">
+                    <div class="layer float-stair" data-depth="-0.35"><img src="/img/float-stair-480.webp" width="480" height="502" alt="" decoding="async" fetchpriority="low"></div>
+                    <div class="layer float-blocks" data-depth="0.3"><img src="/img/float-blocks-480.webp" width="480" height="314" alt="" decoding="async" fetchpriority="low"></div>
+                    <div class="layer device-layer" data-depth="0.12"><div class="device"><div class="screen"><img src="/img/shot-home-600.webp" srcset="/img/shot-home-360.webp 360w, /img/shot-home-600.webp 600w" sizes="(min-width: 960px) 250px, 46vw" width="600" height="1304" alt="The Kupfra home screen: the Stairs, Electrical and Construction modules under a lit stair, with the current stair at 16 risers of 175 mm." fetchpriority="high"></div><img class="frame" src="/img/frame-iphone-490.webp" srcset="/img/frame-iphone-490.webp 490w, /img/frame-iphone-980.webp 980w" sizes="(min-width: 960px) 250px, 46vw" width="1470" height="3000" alt="" aria-hidden="true"></div></div>
+                    <div class="layer float-breaker" data-depth="0.7"><img src="/img/float-breaker-400.webp" width="400" height="258" alt="" decoding="async" fetchpriority="low"></div>
+                    <div class="layer float-cable" data-depth="0.9"><img src="/img/float-cable-480.webp" width="480" height="420" alt="" decoding="async" fetchpriority="low"></div>
                 </div>
             </div>
         </section>
 
-        <section class="section" id="tools" aria-labelledby="tools-title">
+        <section class="plate-band" aria-label="Kupfra in numbers">
             <div class="wrap">
-                <h2 class="section-head reveal" id="tools-title">Three modules, one app.</h2>
-                <div class="cards">
-                    
-                    <article class="card reveal">
-                        <img src="/img/art-stairs-640.webp" srcset="/img/art-stairs-640.webp 640w, /img/art-stairs-1200.webp 1200w" sizes="(min-width: 768px) 360px, 92vw" width="640" height="427" alt="A lit oak stair with a glass balustrade beside a concrete wall." loading="lazy" decoding="async">
-                        <div class="card-body"><h3>Stairs in 3D</h3><p>Enter the floor to floor rise and the room you have, and Kupfra lays out the stair: number of risers, riser height, tread run, pitch and step length.</p><ul><li>Straight, L-shaped, U-shaped, quarter winder, half winder and spiral</li><li>Cut list, materials and cost</li><li>Client PDF with your logo</li></ul></div>
-                    </article>
-                    <article class="card reveal">
-                        <img src="/img/art-electrical-480.webp" srcset="/img/art-electrical-480.webp 480w, /img/art-electrical-900.webp 900w" sizes="(min-width: 768px) 360px, 92vw" width="480" height="208" alt="Copper cable, a four-pole breaker and a multimeter." loading="lazy" decoding="async">
-                        <div class="card-body"><h3>Electrical</h3><p>Size the cable and check the protection, following IEC 60364, BS 7671 for the UK or the NEC for the US.</p><ul><li>Cable size and voltage drop</li><li>Breaker and fuse selection</li><li>Short circuit, earthing, conduit fill, line sizing and Ohm's law</li></ul></div>
-                    </article>
-                    <article class="card reveal">
-                        <img src="/img/art-construction-480.webp" srcset="/img/art-construction-480.webp 480w, /img/art-construction-900.webp 900w" sizes="(min-width: 768px) 360px, 92vw" width="480" height="320" alt="A concrete block, bricks and tiles in a stack." loading="lazy" decoding="async">
-                        <div class="card-body"><h3>Construction</h3><p>The materials for the job, with adhesive, grout, mortar and waste worked out.</p><ul><li>Concrete and screed, tiles, paint</li><li>Drywall, bricks and blocks, insulation</li><li>Flooring and roofing</li></ul></div>
-                    </article>
+                <dl class="plate">
+                    <div><dt>languages, following your device</dt><dd data-count="45">45</dd></div>
+                    <div><dt>stair types, from straight to spiral</dt><dd data-count="6">6</dd></div>
+                    <div><dt>electrical calculators</dt><dd data-count="8">8</dd></div>
+                    <div><dt>construction calculators</dt><dd data-count="8">8</dd></div>
+                    <div><dt>wiring standards: IEC 60364, BS 7671 and the NEC</dt><dd data-count="3">3</dd></div>
+                </dl>
+            </div>
+        </section>
+
+        <section class="section" id="modules" aria-labelledby="modules-title">
+            <div class="wrap">
+                <div class="section-intro">
+                    <h2 class="reveal" id="modules-title">Three modules, one app.</h2>
+                    <p class="reveal">Stairs, Electrical and Construction sit on one home screen. Pick the job, enter what you measured, and read the answer with the working beside it.</p>
+                </div>
+                <div class="modules">
+                    <div class="chapters">
+                        <article class="chapter" id="module-stairs" data-screen="0">
+                            <div>
+                                <p class="module-kicker">Stairs</p>
+                                <h3>A stair laid out in 3D.</h3>
+                                <p>Enter the floor to floor rise and the room you have, and Kupfra lays out the stair: number of risers, riser height, tread run, pitch and step length.</p>
+                                <ul class="ticks"><li>Straight, L-shaped, U-shaped, quarter winder, half winder and spiral</li><li>Cut list, materials and cost</li><li>Client PDF with your logo</li></ul>
+                            </div>
+                            <div class="chapter-phone"><div class="device"><div class="screen"><img src="/img/shot-stair3d-600.webp" srcset="/img/shot-stair3d-360.webp 360w, /img/shot-stair3d-600.webp 600w" sizes="62vw" width="600" height="1304" alt="The straight stair in 3D with the stair type picker below." loading="lazy" decoding="async"></div><img class="frame" src="/img/frame-iphone-490.webp" srcset="/img/frame-iphone-490.webp 490w, /img/frame-iphone-980.webp 980w" sizes="62vw" width="1470" height="3000" alt="" aria-hidden="true" loading="lazy" decoding="async"></div></div>
+                        </article>
+                        <article class="chapter" id="module-electrical" data-screen="1">
+                            <div>
+                                <p class="module-kicker">Electrical</p>
+                                <h3>The right cable and breaker.</h3>
+                                <p>Size the cable and check the protection, following IEC 60364, BS 7671 for the UK or the NEC for the US.</p>
+                                <ul class="ticks"><li>Cable size and voltage drop</li><li>Breaker and fuse selection</li><li>Short circuit, earthing, conduit fill, line sizing and Ohm's law</li></ul>
+                            </div>
+                            <div class="chapter-phone"><div class="device"><div class="screen"><img src="/img/shot-electrical-600.webp" srcset="/img/shot-electrical-360.webp 360w, /img/shot-electrical-600.webp 600w" sizes="62vw" width="600" height="1304" alt="The Electrical module with its calculators: cable size, voltage drop, Ohm's law, breaker selection, conduit fill and earthing." loading="lazy" decoding="async"></div><img class="frame" src="/img/frame-iphone-490.webp" srcset="/img/frame-iphone-490.webp 490w, /img/frame-iphone-980.webp 980w" sizes="62vw" width="1470" height="3000" alt="" aria-hidden="true" loading="lazy" decoding="async"></div></div>
+                        </article>
+                        <article class="chapter" id="module-construction" data-screen="2">
+                            <div>
+                                <p class="module-kicker">Construction</p>
+                                <h3>The materials for the job.</h3>
+                                <p>Quantities with adhesive, grout, mortar and waste worked out.</p>
+                                <ul class="ticks"><li>Concrete and screed, tiles, paint</li><li>Drywall, bricks and blocks, insulation</li><li>Flooring and roofing</li></ul>
+                            </div>
+                            <div class="chapter-phone"><div class="device"><div class="screen"><img src="/img/shot-concrete-600.webp" srcset="/img/shot-concrete-360.webp 360w, /img/shot-concrete-600.webp 600w" sizes="62vw" width="600" height="1304" alt="The concrete and screed calculator with a slab drawing, the volume, the ready-mix order and bags of cement." loading="lazy" decoding="async"></div><img class="frame" src="/img/frame-iphone-490.webp" srcset="/img/frame-iphone-490.webp 490w, /img/frame-iphone-980.webp 980w" sizes="62vw" width="1470" height="3000" alt="" aria-hidden="true" loading="lazy" decoding="async"></div></div>
+                        </article>
+                    </div>
+                    <div class="module-stage" aria-hidden="true">
+                        <div class="module-sticky">
+                            <div class="module-art">
+                                <img class="is-on" src="/img/art-stairs-900.webp" width="900" height="598" alt="" loading="lazy" decoding="async">
+                                <img src="/img/art-electrical-900.webp" width="900" height="389" alt="" loading="lazy" decoding="async">
+                                <img src="/img/float-blocks-480.webp" width="480" height="314" alt="" loading="lazy" decoding="async">
+                            </div>
+                            <div class="module-phone">
+                                <div class="device"><div class="screen">
+                                    <img class="is-on" src="/img/shot-stair3d-600.webp" width="600" height="1304" alt="" loading="lazy" decoding="async">
+                                    <img src="/img/shot-electrical-600.webp" width="600" height="1304" alt="" loading="lazy" decoding="async">
+                                    <img src="/img/shot-concrete-600.webp" width="600" height="1304" alt="" loading="lazy" decoding="async">
+                                </div><img class="frame" src="/img/frame-iphone-980.webp" width="1470" height="3000" alt="" loading="lazy" decoding="async"></div>
+                            </div>
+                            <ul class="module-rail">
+                                <li><a href="#module-stairs" tabindex="-1" aria-current="true">Stairs</a></li>
+                                <li><a href="#module-electrical" tabindex="-1">Electrical</a></li>
+                                <li><a href="#module-construction" tabindex="-1">Construction</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="calculators" aria-labelledby="calculators-title">
+            <div class="wrap">
+                <div class="section-intro">
+                    <h2 class="reveal" id="calculators-title">Sixteen calculators, with the working shown.</h2>
+                    <p class="reveal">Pick a calculator, enter what you measured, and read the result with the working beside it, so you can check it before you order or wire anything.</p>
+                </div>
+                <div class="toolset">
+                    <div class="toolset-head"><h3>Electrical</h3><p>IEC 60364, BS 7671 or the NEC</p></div>
+                    <ul class="tools">
+                        <li class="reveal" style="--i:0"><article class="tool"><span class="free">Free</span><img src="/img/tool/cablesize.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h4>Cable size</h4><p>Current capacity, cross-section, voltage drop and protection.</p></article></li>
+                        <li class="reveal" style="--i:1"><article class="tool"><img src="/img/tool/voltagedrop.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h4>Voltage drop</h4><p>Volts and percent along the length of the run.</p></article></li>
+                        <li class="reveal" style="--i:2"><article class="tool"><img src="/img/tool/breaker.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h4>Breaker selection</h4><p>Fuses and circuit breakers, checked against the cable.</p></article></li>
+                        <li class="reveal" style="--i:3"><article class="tool"><img src="/img/tool/shortcircuit.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h4>Short-circuit current</h4><p>Fault current estimate and breaker trip check.</p></article></li>
+                        <li class="reveal" style="--i:4"><article class="tool"><img src="/img/tool/earthing.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h4>Earthing</h4><p>Earth electrode resistance and checks.</p></article></li>
+                        <li class="reveal" style="--i:5"><article class="tool"><img src="/img/tool/conduitfill.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h4>Conduit fill</h4><p>Fill ratio and the smallest diameter that fits.</p></article></li>
+                        <li class="reveal" style="--i:6"><article class="tool"><img src="/img/tool/linesizing.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h4>Line sizing</h4><p>Cross-section from length, current and voltage drop.</p></article></li>
+                        <li class="reveal" style="--i:7"><article class="tool"><img src="/img/tool/ohmslaw.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h4>Ohm's law and power</h4><p>Quick sums between voltage, current, resistance and power.</p></article></li>
+                    </ul>
+                </div>
+                <div class="toolset">
+                    <div class="toolset-head"><h3>Construction</h3><p>Metric or imperial</p></div>
+                    <ul class="tools">
+                        <li class="reveal" style="--i:0"><article class="tool"><span class="free">Free</span><img src="/img/tool/concrete.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h4>Concrete and screed</h4><p>Volume, ready-mix order, cement, sand and gravel.</p></article></li>
+                        <li class="reveal" style="--i:1"><article class="tool"><img src="/img/tool/tiles.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h4>Tiles</h4><p>Tiles and boxes for the pattern, adhesive and grout.</p></article></li>
+                        <li class="reveal" style="--i:2"><article class="tool"><img src="/img/tool/paint.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h4>Paint</h4><p>Litres and cans for walls and ceiling.</p></article></li>
+                        <li class="reveal" style="--i:3"><article class="tool"><img src="/img/tool/drywall.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h4>Drywall</h4><p>Boards, studs, track, screws and joint filler.</p></article></li>
+                        <li class="reveal" style="--i:4"><article class="tool"><img src="/img/tool/masonry.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h4>Masonry and AAC</h4><p>Bricks or blocks and mortar for a wall.</p></article></li>
+                        <li class="reveal" style="--i:5"><article class="tool"><img src="/img/tool/insulation.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h4>Insulation</h4><p>Thickness for a target U-value.</p></article></li>
+                        <li class="reveal" style="--i:6"><article class="tool"><img src="/img/tool/flooring.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h4>Flooring</h4><p>Packs, area and skirting.</p></article></li>
+                        <li class="reveal" style="--i:7"><article class="tool"><img src="/img/tool/roof.webp" width="320" height="320" alt="" loading="lazy" decoding="async"><h4>Roof pitch and rafters</h4><p>Rise, rafter length, roof area and tiles.</p></article></li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <section class="section" id="stairs" aria-labelledby="stairs-title">
             <div class="wrap">
-                <h2 class="section-head reveal" id="stairs-title">A stair you can build from.</h2>
-                <ul class="feature-list reveal">
-                    <li><h3>Checked against your guidance</h3><p>Every value is compared with the guidance you choose: DIN 18065, the US IRC or the English Approved Document K. Headroom is checked against the ceiling opening, and each check names the rule it comes from.</p></li>
-                    <li><h3>Realistic 3D</h3><p>See the stair in oak, beech, walnut, concrete or steel, with closed or cut stringers or a steel spine, and wood, metal, glass or horizontal rail balustrades. Drag to turn it, pinch to zoom.</p></li>
-                    <li><h3>Cut list and materials</h3><p>The cut list gives the stringer marks for each flight, the treads, landings and risers, ready to share as text or PDF. The materials and cost screen adds board areas, volumes and waste, priced with your own unit prices in your currency.</p></li>
-                    <li><h3>A client PDF with your logo</h3><p>Turn a design into a proposal: cover with the 3D render, plan and side elevation, dimensions, cut list, materials and cost, your notes and the client's signature, under your company name, contact details and logo.</p></li>
-                    <li><h3>Measure with the camera</h3><p>Point the camera at the floor and the floor above to measure the rise, or across the opening to measure its length, and use the value straight away. Devices with LiDAR use scene depth.</p></li>
-                    <li><h3>Projects</h3><p>Save a stair or a calculation as a project and pick it up later. Projects stay on your device.</p></li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="section" id="screens" aria-labelledby="screens-title">
-            <div class="wrap">
-                <h2 class="section-head reveal" id="screens-title">The working, on screen.</h2>
+                <div class="section-intro">
+                    <h2 class="reveal" id="stairs-title">A stair you can build from.</h2>
+                    <p class="reveal">These turns come from the app's own 3D engine. In Kupfra you drag to turn the stair and pinch to zoom.</p>
+                </div>
+                <div class="turn-wrap">
+                    <div class="turntable reveal">
+                        <div class="turn-stage" data-frames="48">
+                            <img src="/img/turn/spiral-760-00.webp" srcset="/img/turn/spiral-420-00.webp 420w, /img/turn/spiral-760-00.webp 760w" sizes="(min-width: 960px) 620px, 92vw" width="760" height="760" alt="A stair rendered by Kupfra in 3D, turning slowly." loading="lazy" decoding="async">
+                            <canvas width="760" height="760" aria-hidden="true"></canvas>
+                        </div>
+                        <div class="turn-controls" role="group" aria-label="Stair type shown">
+                            <button type="button" data-kind="spiral" aria-pressed="true">Spiral</button>
+                            <button type="button" data-kind="lShaped" aria-pressed="false">L-shaped</button>
+                            <button type="button" data-kind="uShaped" aria-pressed="false">U-shaped</button>
+                            <p class="small turn-hint">Drag to turn</p>
+                        </div>
+                    </div>
+                    <ul class="features">
+                        <li class="reveal"><h3>Checked against your guidance</h3><p>Every value is compared with the guidance you choose: DIN 18065, the US IRC or the English Approved Document K. Headroom is checked against the ceiling opening, and each check names the rule it comes from.</p></li>
+                        <li class="reveal"><h3>Realistic 3D</h3><p>Oak, beech, walnut, concrete or steel, with closed or cut stringers or a steel spine, and wood, metal, glass or horizontal rail balustrades.</p></li>
+                        <li class="reveal"><h3>Cut list and materials</h3><p>Stringer marks for each flight, the treads, landings and risers, ready to share as text or PDF. The materials and cost screen adds board areas, volumes and waste, priced with your own unit prices in your currency.</p></li>
+                        <li class="reveal"><h3>A client PDF with your logo</h3><p>A cover with the 3D render, plan and side elevation, dimensions, cut list, materials and cost, your notes and the client's signature, under your company name, contact details and logo.</p></li>
+                        <li class="reveal"><h3>Measure with the camera</h3><p>Point the camera at the floor and the floor above to measure the rise, or across the opening to measure its length. Devices with LiDAR use scene depth.</p></li>
+                        <li class="reveal"><h3>Projects</h3><p>Save a stair or a calculation as a project and pick it up later. Projects stay on your device.</p></li>
+                    </ul>
+                </div>
                 <div class="shots">
-                    <figure class="reveal"><div class="device">
-                            <div class="screen"><img src="/img/shot-stairs-600.webp" srcset="/img/shot-stairs-360.webp 360w, /img/shot-stairs-600.webp 600w" sizes="(min-width: 768px) 240px, 44vw" width="600" height="1304" alt="The stair design screen with tread, riser, stringer and balustrade options." loading="lazy" decoding="async"></div>
-                            <img class="frame" src="/img/frame-iphone-490.webp" srcset="/img/frame-iphone-490.webp 490w, /img/frame-iphone-980.webp 980w" sizes="(min-width: 768px) 240px, 44vw" width="1470" height="3000" alt="" aria-hidden="true">
-                        </div><figcaption>Design options</figcaption></figure>
-                    <figure class="reveal"><div class="device">
-                            <div class="screen"><img src="/img/shot-checks-600.webp" srcset="/img/shot-checks-360.webp 360w, /img/shot-checks-600.webp 600w" sizes="(min-width: 768px) 240px, 44vw" width="600" height="1304" alt="Guidance values for the English Approved Document K, each with a pass mark and the rule it comes from." loading="lazy" decoding="async"></div>
-                            <img class="frame" src="/img/frame-iphone-490.webp" srcset="/img/frame-iphone-490.webp 490w, /img/frame-iphone-980.webp 980w" sizes="(min-width: 768px) 240px, 44vw" width="1470" height="3000" alt="" aria-hidden="true">
-                        </div><figcaption>Checks with their source</figcaption></figure>
-                    <figure class="reveal"><div class="device">
-                            <div class="screen"><img src="/img/shot-cable-600.webp" srcset="/img/shot-cable-360.webp 360w, /img/shot-cable-600.webp 600w" sizes="(min-width: 768px) 240px, 44vw" width="600" height="1304" alt="The cable size calculator showing a 4 mm squared cable, a 37 A capacity, a 32 A breaker and a 2.30 percent voltage drop." loading="lazy" decoding="async"></div>
-                            <img class="frame" src="/img/frame-iphone-490.webp" srcset="/img/frame-iphone-490.webp 490w, /img/frame-iphone-980.webp 980w" sizes="(min-width: 768px) 240px, 44vw" width="1470" height="3000" alt="" aria-hidden="true">
-                        </div><figcaption>Cable and voltage drop</figcaption></figure>
-                    <figure class="reveal"><div class="device">
-                            <div class="screen"><img src="/img/shot-pdf-600.webp" srcset="/img/shot-pdf-360.webp 360w, /img/shot-pdf-600.webp 600w" sizes="(min-width: 768px) 240px, 44vw" width="600" height="1304" alt="The client PDF preview with a stair proposal, client name, notes and signature." loading="lazy" decoding="async"></div>
-                            <img class="frame" src="/img/frame-iphone-490.webp" srcset="/img/frame-iphone-490.webp 490w, /img/frame-iphone-980.webp 980w" sizes="(min-width: 768px) 240px, 44vw" width="1470" height="3000" alt="" aria-hidden="true">
-                        </div><figcaption>Client PDF</figcaption></figure>
+                    <figure class="reveal"><div class="device"><div class="screen"><img src="/img/shot-checks-600.webp" srcset="/img/shot-checks-360.webp 360w, /img/shot-checks-600.webp 600w" sizes="(min-width: 720px) 240px, 30vw" width="600" height="1304" alt="Guidance values for the English Approved Document K, each with a pass mark and the rule it comes from." loading="lazy" decoding="async"></div><img class="frame" src="/img/frame-iphone-490.webp" srcset="/img/frame-iphone-490.webp 490w, /img/frame-iphone-980.webp 980w" sizes="(min-width: 720px) 240px, 30vw" width="1470" height="3000" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><figcaption>Checks with their source</figcaption></figure>
+                    <figure class="reveal"><div class="device"><div class="screen"><img src="/img/shot-cutlist-600.webp" srcset="/img/shot-cutlist-360.webp 360w, /img/shot-cutlist-600.webp 600w" sizes="(min-width: 720px) 240px, 30vw" width="600" height="1304" alt="The cut list for a straight stair: stringer count, lengths, plumb and level cuts." loading="lazy" decoding="async"></div><img class="frame" src="/img/frame-iphone-490.webp" srcset="/img/frame-iphone-490.webp 490w, /img/frame-iphone-980.webp 980w" sizes="(min-width: 720px) 240px, 30vw" width="1470" height="3000" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><figcaption>Cut list</figcaption></figure>
+                    <figure class="reveal"><div class="device"><div class="screen"><img src="/img/shot-pdf-600.webp" srcset="/img/shot-pdf-360.webp 360w, /img/shot-pdf-600.webp 600w" sizes="(min-width: 720px) 240px, 30vw" width="600" height="1304" alt="The client PDF preview with a stair proposal, client name, notes and signature." loading="lazy" decoding="async"></div><img class="frame" src="/img/frame-iphone-490.webp" srcset="/img/frame-iphone-490.webp 490w, /img/frame-iphone-980.webp 980w" sizes="(min-width: 720px) 240px, 30vw" width="1470" height="3000" alt="" aria-hidden="true" loading="lazy" decoding="async"></div><figcaption>Client PDF</figcaption></figure>
                 </div>
             </div>
         </section>
 
+        <section class="norms" aria-labelledby="norms-title">
+            <h2 class="visually-hidden" id="norms-title">Standards and guidance Kupfra follows: IEC 60364, BS 7671, the NEC, DIN 18065, Approved Document K and the IRC.</h2>
+            <div class="marquee" aria-hidden="true"><ul><li>IEC 60364</li><li>BS 7671</li><li>NEC</li><li>DIN 18065</li><li>Approved Document K</li><li>IRC</li></ul><ul><li>IEC 60364</li><li>BS 7671</li><li>NEC</li><li>DIN 18065</li><li>Approved Document K</li><li>IRC</li></ul></div>
+        </section>
+
         <section class="section" id="regions" aria-labelledby="regions-title">
-            <div class="wrap">
-                <div class="text reveal">
-                    <h2 class="section-head" id="regions-title">Your region, your language.</h2>
+            <div class="wrap split">
+                <h2 class="reveal" id="regions-title">Your region, your language.</h2>
+                <div class="body reveal">
                     <p>Kupfra comes in 45 languages and follows your device. Units are metric or imperial, set once, and the stair guidance and electrical standard are the ones you pick: IEC 60364 or BS 7671 in Europe and the UK, the NEC in the US, copper or aluminum, PVC or XLPE, by installation method.</p>
                     <p class="note">The results are guidance for planning. Check your local building code before you build, and have electrical work signed off by a qualified electrician. Kupfra does not replace the code, an engineer or an inspector.</p>
                 </div>
@@ -160,13 +253,15 @@
 
         <section class="section" id="price" aria-labelledby="price-title">
             <div class="wrap">
-                <h2 class="section-head reveal" id="price-title">Free to start. Unlock the rest.</h2>
+                <div class="section-intro">
+                    <h2 class="reveal" id="price-title">Free to start. Unlock the rest.</h2>
+                </div>
                 <div class="price-grid reveal">
                     <div class="price-col">
                         <h3>Free</h3>
                         <p>The straight stair, the cable size calculator and the concrete and screed calculator, with up to 3 saved projects. The free version shows ads.</p>
                     </div>
-                    <div class="price-col forever">
+                    <div class="price-col unlock">
                         <h3>With the unlock</h3>
                         <p>Every stair type, every calculator, design options, the materials and cost estimate, client PDFs, PDF and text export, camera measuring and unlimited projects, and no ads.</p>
                     </div>
@@ -177,8 +272,8 @@
 
         <section class="section" id="privacy" aria-labelledby="privacy-title">
             <div class="wrap">
-                <div class="text reveal">
-                    <h2 class="privacy-line" id="privacy-title">Your projects stay on your phone.</h2>
+                <div class="privacy-band reveal">
+                    <h2 id="privacy-title">Your projects stay on your phone.</h2>
                     <p>No account, no sign-in. Your projects, prices and logo are stored on your device, and the camera measures on your device and records nothing. The free app uses Google for ads, analytics and crash reports, and RevenueCat for purchases, as the policy sets out.</p>
                     <p><a href="/privacy.html">Read the privacy policy</a></p>
                 </div>
@@ -187,7 +282,9 @@
 
         <section class="section" id="questions" aria-labelledby="questions-title">
             <div class="wrap">
-                <h2 class="section-head reveal" id="questions-title">Questions</h2>
+                <div class="section-intro">
+                    <h2 class="reveal" id="questions-title">Questions</h2>
+                </div>
                 <div class="faq">
                     <details>
                         <summary>Is Kupfra free?</summary>
@@ -218,14 +315,15 @@
                         <div class="answer"><p>iPhone. Camera measuring needs a device that supports ARKit world tracking, and uses LiDAR depth where the device has it.</p></div>
                     </details>
                 </div>
-                <p class="small reveal" style="margin-top:24px">More help is on the <a href="/support.html">support page</a>.</p>
+                <p class="small faq-more">More help is on the <a href="/support.html">support page</a>.</p>
             </div>
         </section>
 
         <section class="closing" aria-labelledby="closing-title">
             <div class="wrap">
+                <img class="closing-art reveal" src="/img/art-stairs-900.webp" width="900" height="598" alt="" loading="lazy" decoding="async">
                 <h2 id="closing-title">Measure twice. Calculate once.</h2>
-                <a class="badge" href="https://apps.apple.com/app/id6827716801"><img src="/img/app-store-black-en-us.svg" width="135" height="45" alt="Download Kupfra on the App Store"></a>
+                <a class="badge" href="https://apps.apple.com/app/id6827716801"><img src="/img/app-store-black-en-us.svg" width="135" height="45" alt="Download Kupfra on the App Store" loading="lazy"></a>
                 <p class="small">Free to start on iPhone.</p>
             </div>
         </section>
@@ -234,17 +332,26 @@
     <!-- build:footer -->
     <footer class="site-footer">
         <div class="wrap">
-            <p class="footer-maker">Kupfra is made by Darius Cirjan, one person. Questions go straight to me: <a href="mailto:iosallapps@icloud.com">iosallapps@icloud.com</a>.</p>
-            <nav aria-label="Footer">
-                <ul class="footer-links">
-                    <li><a href="/#tools">Tools</a></li>
-                    <li><a href="/#price">Free and unlock</a></li>
-                    <li><a href="/#questions">Questions</a></li>
-                    <li><a href="/support.html">Support</a></li>
-                    <li><a href="/privacy.html">Privacy</a></li>
-                    <li><a href="/terms.html">Terms</a></li>
-                </ul>
-            </nav>
+            <div class="footer-top">
+                <div>
+                    <a class="brand" href="/" aria-label="Kupfra, home">
+                        <img src="/img/app-icon-64.webp" srcset="/img/app-icon-64.webp 1x, /img/app-icon-128.webp 2x" width="32" height="32" alt="" loading="lazy" decoding="async">
+                        <span>Kupfra</span>
+                    </a>
+                    <p class="footer-maker">Kupfra is made by Darius Cirjan, one person. Questions go straight to me: <a href="mailto:iosallapps@icloud.com">iosallapps@icloud.com</a>.</p>
+                </div>
+                <nav aria-label="Footer">
+                    <ul class="footer-links">
+                        <li><a href="/#modules">Modules</a></li>
+                        <li><a href="/#calculators">Calculators</a></li>
+                        <li><a href="/#price">Free and unlock</a></li>
+                        <li><a href="/#questions">Questions</a></li>
+                        <li><a href="/support.html">Support</a></li>
+                        <li><a href="/privacy.html">Privacy</a></li>
+                        <li><a href="/terms.html">Terms</a></li>
+                    </ul>
+                </nav>
+            </div>
             <div class="footer-small">
                 <p>iPhone, iPad and App Store are trademarks or service marks of Apple Inc. IEC, BS, NEC, DIN and IRC are named only to say which published guidance Kupfra follows. Kupfra is not affiliated with or endorsed by any standards body.</p>
                 <p>This website is hosted on GitHub Pages by GitHub, Inc. Contact: <a href="mailto:iosallapps@icloud.com">iosallapps@icloud.com</a>.</p>
@@ -253,6 +360,6 @@
         </div>
     </footer>
     <!-- /build:footer -->
-    <script src="/site.js?v=1" defer></script>
+    <script src="/site.js?v=2" defer></script>
 </body>
 </html>

@@ -13,7 +13,7 @@ DOMAIN = "https://kupfra.com/"
 APP_STORE = "https://apps.apple.com/app/id6827716801"
 APP_ID = "6827716801"
 EMAIL = "iosallapps@icloud.com"
-STYLE_VERSION = "1"
+STYLE_VERSION = "2"
 FORBIDDEN = ["—", "–", "&mdash;", "&ndash;", "&#8212;", "&#8211;"]
 
 DESC = ("Kupfra is an all-in-one construction and electrical calculator for electricians, builders and DIY: "
@@ -36,7 +36,7 @@ HEAD = """<meta charset="UTF-8">
     <meta name="apple-itunes-app" content="app-id={app_id}">
     <title>{title}</title>
     <meta name="description" content="{description}">
-    <meta name="theme-color" content="#0C0B0A">
+    <meta name="theme-color" content="#0E0C0B">
     <meta name="color-scheme" content="dark">{canonical}
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Kupfra">
@@ -55,6 +55,7 @@ HEAD = """<meta charset="UTF-8">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preload" href="/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/styles.css?v={style_version}">
     <script>document.documentElement.classList.add("js")</script>"""
 
@@ -66,7 +67,8 @@ HEADER = """<header class="site-header">
             </a>
             <nav class="nav" aria-label="Main">
                 <ul class="nav-links">
-                    <li><a href="/#tools">Tools</a></li>
+                    <li><a href="/#modules">Modules</a></li>
+                    <li><a href="/#calculators">Calculators</a></li>
                     <li><a href="/#stairs">Stairs</a></li>
                     <li><a href="/#price">Free and unlock</a></li>
                     <li><a href="/#questions">Questions</a></li>
@@ -78,17 +80,26 @@ HEADER = """<header class="site-header">
 
 FOOTER = """<footer class="site-footer">
         <div class="wrap">
-            <p class="footer-maker">Kupfra is made by Darius Cirjan, one person. Questions go straight to me: <a href="mailto:{email}">{email}</a>.</p>
-            <nav aria-label="Footer">
-                <ul class="footer-links">
-                    <li><a href="/#tools">Tools</a></li>
-                    <li><a href="/#price">Free and unlock</a></li>
-                    <li><a href="/#questions">Questions</a></li>
-                    <li><a href="/support.html">Support</a></li>
-                    <li><a href="/privacy.html">Privacy</a></li>
-                    <li><a href="/terms.html">Terms</a></li>
-                </ul>
-            </nav>
+            <div class="footer-top">
+                <div>
+                    <a class="brand" href="/" aria-label="Kupfra, home">
+                        <img src="/img/app-icon-64.webp" srcset="/img/app-icon-64.webp 1x, /img/app-icon-128.webp 2x" width="32" height="32" alt="" loading="lazy" decoding="async">
+                        <span>Kupfra</span>
+                    </a>
+                    <p class="footer-maker">Kupfra is made by Darius Cirjan, one person. Questions go straight to me: <a href="mailto:{email}">{email}</a>.</p>
+                </div>
+                <nav aria-label="Footer">
+                    <ul class="footer-links">
+                        <li><a href="/#modules">Modules</a></li>
+                        <li><a href="/#calculators">Calculators</a></li>
+                        <li><a href="/#price">Free and unlock</a></li>
+                        <li><a href="/#questions">Questions</a></li>
+                        <li><a href="/support.html">Support</a></li>
+                        <li><a href="/privacy.html">Privacy</a></li>
+                        <li><a href="/terms.html">Terms</a></li>
+                    </ul>
+                </nav>
+            </div>
             <div class="footer-small">
                 <p>iPhone, iPad and App Store are trademarks or service marks of Apple Inc. IEC, BS, NEC, DIN and IRC are named only to say which published guidance Kupfra follows. Kupfra is not affiliated with or endorsed by any standards body.</p>
                 <p>This website is hosted on GitHub Pages by GitHub, Inc. Contact: <a href="mailto:{email}">{email}</a>.</p>
