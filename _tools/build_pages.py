@@ -13,7 +13,7 @@ DOMAIN = "https://kupfra.com/"
 APP_STORE = "https://apps.apple.com/app/id6827716801"
 APP_ID = "6827716801"
 EMAIL = "iosallapps@gmail.com"
-STYLE_VERSION = "20261115a"
+STYLE_VERSION = "20261115e"
 FORBIDDEN = ["—", "–", "&mdash;", "&ndash;", "&#8212;", "&#8211;"]
 
 DESC = ("Kupfra is an all-in-one construction and electrical calculator for electricians, builders and DIY: "
@@ -55,7 +55,8 @@ HEAD = """<meta charset="UTF-8">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="preload" href="/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/styles.css?v={style_version}">
     <script>document.documentElement.classList.add("js")</script>"""
 
@@ -97,13 +98,14 @@ FOOTER = """<footer class="site-footer">
                         <li><a href="/support.html">Support</a></li>
                         <li><a href="/privacy.html">Privacy</a></li>
                         <li><a href="/terms.html">Terms</a></li>
+                        <li><a href="https://vistoapps.com/apps.html">More apps by Visto Apps</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="footer-small">
                 <p>iPhone, iPad and App Store are trademarks or service marks of Apple Inc. IEC, BS, NEC, DIN and IRC are named only to say which published guidance Kupfra follows. Kupfra is not affiliated with or endorsed by any standards body.</p>
                 <p>This website is hosted on GitHub Pages by GitHub, Inc. Contact: <a href="mailto:{email}">{email}</a>.</p>
-                <p>&copy; 2026 Visto Apps, the brand of Darius Cirjan</p>
+                <p>&copy; 2026 Visto Apps, the brand of Darius Cirjan. <span class="footer-visto">Made by <a href="https://vistoapps.com">Visto Apps</a>.</span></p>
             </div>
         </div>
     </footer>"""
