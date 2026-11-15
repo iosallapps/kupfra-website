@@ -12,8 +12,8 @@ SITE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOMAIN = "https://kupfra.com/"
 APP_STORE = "https://apps.apple.com/app/id6827716801"
 APP_ID = "6827716801"
-EMAIL = "iosallapps@icloud.com"
-STYLE_VERSION = "2"
+EMAIL = "iosallapps@gmail.com"
+STYLE_VERSION = "20261115a"
 FORBIDDEN = ["—", "–", "&mdash;", "&ndash;", "&#8212;", "&#8211;"]
 
 DESC = ("Kupfra is an all-in-one construction and electrical calculator for electricians, builders and DIY: "
@@ -27,7 +27,7 @@ PAGES = {
     "privacy.html": ("Privacy Policy | Kupfra", "How Kupfra handles your data: projects stay on your device, there are no accounts, "
                      "and the free app uses Google and RevenueCat for ads, analytics, crash reports and purchases.", "privacy.html"),
     "terms.html": ("Terms of Use | Kupfra", "The terms for using Kupfra: the free version, ads, weekly and monthly subscriptions, "
-                   "the lifetime unlock and the guidance disclaimer.", "terms.html"),
+                   "the lifetime unlock and the disclaimer that results are estimates, not an electrical or structural sign-off.", "terms.html"),
     "404.html": ("Page not found | Kupfra", "This page does not exist. Go back to Kupfra, the construction and electrical calculator.", None),
 }
 
@@ -86,7 +86,7 @@ FOOTER = """<footer class="site-footer">
                         <img src="/img/app-icon-64.webp" srcset="/img/app-icon-64.webp 1x, /img/app-icon-128.webp 2x" width="32" height="32" alt="" loading="lazy" decoding="async">
                         <span>Kupfra</span>
                     </a>
-                    <p class="footer-maker">Kupfra is made by Darius Cirjan, one person. Questions go straight to me: <a href="mailto:{email}">{email}</a>.</p>
+                    <p class="footer-maker">Kupfra is made by Visto Apps, the brand of Darius Cirjan. Questions go straight to me: <a href="mailto:{email}">{email}</a>.</p>
                 </div>
                 <nav aria-label="Footer">
                     <ul class="footer-links">
@@ -103,7 +103,7 @@ FOOTER = """<footer class="site-footer">
             <div class="footer-small">
                 <p>iPhone, iPad and App Store are trademarks or service marks of Apple Inc. IEC, BS, NEC, DIN and IRC are named only to say which published guidance Kupfra follows. Kupfra is not affiliated with or endorsed by any standards body.</p>
                 <p>This website is hosted on GitHub Pages by GitHub, Inc. Contact: <a href="mailto:{email}">{email}</a>.</p>
-                <p>&copy; 2026 Darius Cirjan</p>
+                <p>&copy; 2026 Visto Apps, the brand of Darius Cirjan</p>
             </div>
         </div>
     </footer>"""
