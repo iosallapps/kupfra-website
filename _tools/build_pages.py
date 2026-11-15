@@ -15,7 +15,7 @@ DOMAIN = "https://kupfra.com/"
 APP_STORE = "https://apps.apple.com/app/id6827716801"
 APP_ID = "6827716801"
 EMAIL = "iosallapps@gmail.com"
-STYLE_VERSION = "20261116g"
+STYLE_VERSION = "20261116s"
 FORBIDDEN = ["—", "–", "&mdash;", "&ndash;", "&#8212;", "&#8211;"]
 
 DESC = ("Construction and electrical calculator with a 3D stair designer: cable size, concrete, tiles, roof and more, "
@@ -42,7 +42,7 @@ HEAD = """<meta charset="UTF-8">
     <meta name="apple-itunes-app" content="app-id={app_id}">
     <title>{title}</title>
     <meta name="description" content="{description}">
-    <meta name="theme-color" content="#0E0C0B">
+    <meta name="theme-color" content="#452424" data-scrolled="#0E0C0B">
     <meta name="color-scheme" content="dark">{canonical}{alternates}
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
