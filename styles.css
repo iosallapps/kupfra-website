@@ -331,7 +331,6 @@ p:last-child { margin-bottom: 0; }
     font-variant-numeric: tabular-nums lining-nums;
     color: var(--paper);
 }
-.plate dd .unit { font-size: 0.42em; font-stretch: 100%; font-weight: 600; color: var(--copper-text); margin-left: 0.15em; letter-spacing: 0; }
 
 @media (min-width: 900px) {
     .plate { grid-template-columns: repeat(5, minmax(0, 1fr)); }
@@ -677,16 +676,13 @@ p:last-child { margin-bottom: 0; }
 }
 .doc h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-stretch: 122%; font-weight: 820; letter-spacing: -0.03em; line-height: 0.98; margin-bottom: 18px; }
 .doc h2 { font-size: clamp(1.375rem, 3vw, 1.75rem); font-stretch: 110%; font-weight: 720; letter-spacing: -0.01em; line-height: 1.2; max-width: none; margin: 48px 0 14px; padding-top: 22px; border-top: 1px solid var(--line); }
-.doc h3 { margin: 28px 0 10px; font-size: 1.125rem; }
 .doc p,
 .doc li { color: #e3d8df; }
 .doc ul { padding-left: 1.2em; margin: 0 0 1em; }
 .doc li { margin-bottom: 0.5em; }
 .doc li::marker { color: var(--copper); }
 .doc strong { color: var(--paper); font-weight: 650; }
-.doc-meta { color: var(--dust); font-size: 0.9375rem; margin-bottom: 4px; }
 .doc-intro { font-size: 1.1875rem; color: var(--dust); }
-.callout { margin: 28px 0; padding: 22px 24px; border-radius: 18px; border: 1px solid color-mix(in srgb, var(--copper-text) 30%, transparent); background: radial-gradient(120% 120% at 100% 0%, color-mix(in srgb, var(--c1) 14%, transparent), transparent 60%), var(--graphite); }
 .doc .faq { margin-top: 20px; }
 
 .notfound { padding: clamp(80px, 14vw, 160px) 0; text-align: center; }
@@ -760,7 +756,6 @@ h2 { font-size: clamp(2.25rem, 5vw, 3.75rem); line-height: 1.04; max-width: 18ch
 .closing h2 { font-size: clamp(2.75rem, 8vw, 6.25rem); line-height: 0.98; letter-spacing: -0.015em; max-width: 14ch; }
 .doc h1 { font-weight: 400; letter-spacing: -0.015em; line-height: 1; font-size: clamp(2.75rem, 8vw, 4.5rem); }
 .doc h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.75rem, 3.4vw, 2.25rem); line-height: 1.1; letter-spacing: -0.005em; }
-.doc h3 { font-family: var(--font); font-weight: 600; }
 .plate dd { font-family: var(--serif); font-weight: 400; font-size: clamp(3rem, 6vw, 4.75rem); }
 .marquee li { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: 0; font-size: clamp(2.5rem, 6.4vw, 5rem); }
 
@@ -778,7 +773,7 @@ h2 { font-size: clamp(2.25rem, 5vw, 3.75rem); line-height: 1.04; max-width: 18ch
 .nav-links a:hover { background: rgba(255,255,255,.1); color: var(--paper); }
 
 /* Glass surfaces */
-.tool, .price-col, .privacy-band, .legal-toc, .callout, .turn-stage {
+.tool, .price-col, .privacy-band, .legal-toc, .turn-stage {
     background: linear-gradient(160deg, color-mix(in srgb, var(--c1) 12%, rgba(255,255,255,.05)), rgba(255,255,255,.03));
     border: 1px solid var(--glass-line);
     box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
@@ -805,8 +800,6 @@ h2 { font-size: clamp(2.25rem, 5vw, 3.75rem); line-height: 1.04; max-width: 18ch
 .footer-small { color: #a99aa4; }
 
 /* Buttons */
-.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 26px; border-radius: 999px; font-weight: 600; text-decoration: none; }
-.btn-primary { background: linear-gradient(180deg, color-mix(in srgb, var(--c1) 55%, white), var(--c1)); color: var(--on-c1); box-shadow: 0 0 0 1px rgba(255,255,255,.5) inset, 0 10px 36px color-mix(in srgb, var(--c1) 45%, transparent); }
 .footer-visto a { color: var(--paper); }
 @media (max-width: 640px) {
     /* text sits 28px from the screen edge on phones, like vistoapps.com */

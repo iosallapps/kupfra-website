@@ -15,7 +15,7 @@ DOMAIN = "https://kupfra.com/"
 APP_STORE = "https://apps.apple.com/app/id6827716801"
 APP_ID = "6827716801"
 EMAIL = "iosallapps@gmail.com"
-STYLE_VERSION = "20261115f"
+STYLE_VERSION = "20261116g"
 FORBIDDEN = ["—", "–", "&mdash;", "&ndash;", "&#8212;", "&#8211;"]
 
 DESC = ("Construction and electrical calculator with a 3D stair designer: cable size, concrete, tiles, roof and more, "
