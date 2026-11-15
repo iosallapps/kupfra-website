@@ -1,0 +1,16 @@
+# Kupfra
+
+> Construction and electrical calculator for iPhone and iPad, by Visto Apps (https://vistoapps.com).
+
+Kupfra is a toolkit for electricians, builders and DIY. It lays out stairs in 3D (straight, L-shaped, U-shaped, quarter winder, half winder and spiral) with a cut list, materials, cost estimate and a client PDF with your logo. It has eight electrical calculators (cable size, voltage drop, breaker selection, short-circuit current, earthing, conduit fill, line sizing, Ohm's law) following IEC 60364, BS 7671 or the NEC, and eight construction calculators (concrete and screed, tiles, paint, drywall, masonry, insulation, flooring, roof). The camera can measure a stair's rise and opening. 45 languages, metric or imperial. Projects stay on the device; there are no accounts.
+
+Free to download with ads: the straight stair, the cable size and concrete calculators and up to 3 saved projects. An unlock (weekly or monthly subscription, or a one-time lifetime purchase) adds everything and removes ads.
+
+Results are estimates for planning, not an electrical or structural sign-off. Local building codes and a licensed professional decide.
+
+## Pages
+- [Home](https://kupfra.com/)
+- [Support](https://kupfra.com/support.html)
+- [Privacy Policy](https://kupfra.com/privacy.html)
+- [Terms of Use](https://kupfra.com/terms.html)
+- [App Store](https://apps.apple.com/app/id6827716801)

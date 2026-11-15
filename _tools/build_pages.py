@@ -4,32 +4,38 @@
 
 Blocks between <!-- build:NAME --> and <!-- /build:NAME --> are regenerated here.
 """
+import json
 import os
 import re
 import sys
+import html as htmllib
 
 SITE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOMAIN = "https://kupfra.com/"
 APP_STORE = "https://apps.apple.com/app/id6827716801"
 APP_ID = "6827716801"
 EMAIL = "iosallapps@gmail.com"
-STYLE_VERSION = "20261115e"
+STYLE_VERSION = "20261115f"
 FORBIDDEN = ["—", "–", "&mdash;", "&ndash;", "&#8212;", "&#8211;"]
 
-DESC = ("Kupfra is an all-in-one construction and electrical calculator for electricians, builders and DIY: "
-        "a 3D stair designer with cut list and client PDF, cable and breaker sizing to IEC 60364, BS 7671 or the NEC, "
-        "and concrete, tile, paint and roof calculators. 45 languages.")
+DESC = ("Construction and electrical calculator with a 3D stair designer: cable size, concrete, tiles, roof and more, "
+        "with the working shown. Free on iPhone and iPad.")
+LASTMOD = "2026-11-15"
+ORG = {"@type": "Organization", "name": "Visto Apps", "url": "https://vistoapps.com",
+       "founder": {"@type": "Person", "name": "Darius Cirjan"}}
 
 PAGES = {
     "index.html": ("Kupfra: Construction & Electrical Calculator", DESC, ""),
-    "support.html": ("Help with Kupfra", "Unlock, restore, manage a subscription, units and standards by region, languages, "
-                     "your logo on client PDFs, and how to get in touch.", "support.html"),
-    "privacy.html": ("Privacy Policy | Kupfra", "How Kupfra handles your data: projects stay on your device, there are no accounts, "
-                     "and the free app uses Google and RevenueCat for ads, analytics, crash reports and purchases.", "privacy.html"),
-    "terms.html": ("Terms of Use | Kupfra", "The terms for using Kupfra: the free version, ads, weekly and monthly subscriptions, "
-                   "the lifetime unlock and the disclaimer that results are estimates, not an electrical or structural sign-off.", "terms.html"),
+    "support.html": ("Kupfra Support: Unlock, Restore, Units, Contact", "Help with Kupfra: unlock and restore purchases, manage a subscription, "
+                     "set units and standards by region, add your logo to client PDFs, and get in touch.", "support.html"),
+    "privacy.html": ("Privacy Policy | Kupfra", "How Kupfra handles your data: projects stay on your device, no accounts, and Google and "
+                     "RevenueCat handle ads, analytics, crash reports and purchases.", "privacy.html"),
+    "terms.html": ("Terms of Use | Kupfra", "The terms for using Kupfra: the free version, ads, subscriptions, the lifetime unlock, "
+                   "and why results are estimates, not an electrical or structural sign-off.", "terms.html"),
     "404.html": ("Page not found | Kupfra", "This page does not exist. Go back to Kupfra, the construction and electrical calculator.", None),
 }
+CRUMBS = {"support.html": "Support", "privacy.html": "Privacy Policy", "terms.html": "Terms of Use"}
+SHOTS = ["shot-home", "shot-stair3d", "shot-electrical", "shot-concrete", "shot-cutlist", "shot-pdf", "shot-checks", "shot-cable"]
 
 HEAD = """<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -37,8 +43,9 @@ HEAD = """<meta charset="UTF-8">
     <title>{title}</title>
     <meta name="description" content="{description}">
     <meta name="theme-color" content="#0E0C0B">
-    <meta name="color-scheme" content="dark">{canonical}
+    <meta name="color-scheme" content="dark">{canonical}{alternates}
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Kupfra">
     <meta property="og:url" content="{url}">
     <meta property="og:title" content="{title}">
@@ -116,8 +123,55 @@ def render_head(page):
     url = DOMAIN + (path or "")
     canonical = ('\n    <meta name="robots" content="noindex">' if path is None
                  else f'\n    <link rel="canonical" href="{url}">')
-    return HEAD.format(app_id=APP_ID, title=title, description=description, canonical=canonical,
+    alternates = "" if path is None else (f'\n    <link rel="alternate" hreflang="en" href="{url}">'
+                                         f'\n    <link rel="alternate" hreflang="x-default" href="{url}">')
+    return HEAD.format(app_id=APP_ID, title=title, description=description, canonical=canonical, alternates=alternates,
                        url=url, domain=DOMAIN, style_version=STYLE_VERSION)
+
+
+
+def faq_items(source):
+    items = []
+    for m in re.finditer(r"<details>\s*<summary>(.*?)</summary>\s*<div class=\"answer\">(.*?)</div>\s*</details>", source, re.S):
+        q = htmllib.unescape(re.sub(r"<[^>]+>", "", m.group(1))).strip()
+        a = htmllib.unescape(re.sub(r"<[^>]+>", "", m.group(2))).strip()
+        items.append({"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}})
+    return items
+
+
+def render_ld(page, source):
+    title, description, path = PAGES[page]
+    if path is None:
+        return ""
+    graph = []
+    if page == "index.html":
+        graph.append({
+            "@type": "MobileApplication", "@id": DOMAIN + "#app", "name": "Kupfra",
+            "alternateName": "Kupfra Construction Calculator", "description": description,
+            "url": DOMAIN, "operatingSystem": "iOS 17.0 or later, iPadOS 17.0 or later",
+            "applicationCategory": "UtilitiesApplication", "applicationSubCategory": "Construction and electrical calculators",
+            "datePublished": "2026-11-13", "inLanguage": "en", "isAccessibleForFree": True,
+            "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+            "downloadUrl": APP_STORE, "installUrl": APP_STORE,
+            "image": DOMAIN + "img/app-icon-256.webp",
+            "screenshot": [DOMAIN + f"img/{s}-600.webp" for s in SHOTS],
+            "author": ORG, "publisher": ORG})
+        graph.append({"@type": "WebSite", "@id": DOMAIN + "#site", "name": "Kupfra", "url": DOMAIN, "inLanguage": "en", "publisher": ORG})
+        faq = faq_items(source)
+        if faq:
+            graph.append({"@type": "FAQPage", "mainEntity": faq})
+    else:
+        graph.append({"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Kupfra", "item": DOMAIN},
+            {"@type": "ListItem", "position": 2, "name": CRUMBS[page], "item": DOMAIN + path}]})
+    data = {"@context": "https://schema.org", "@graph": graph}
+    return '<script type="application/ld+json">\n' + json.dumps(data, ensure_ascii=False, indent=1) + "\n    </script>"
+
+
+def sitemap():
+    rows = "".join(f"    <url><loc>{DOMAIN + p[2]}</loc><lastmod>{LASTMOD}</lastmod></url>\n"
+                   for p in PAGES.values() if p[2] is not None)
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + rows + "</urlset>\n")
 
 
 def replace_block(source, name, body):
@@ -131,6 +185,10 @@ def main():
     for page in PAGES:
         path = os.path.join(SITE, page)
         source = open(path, encoding="utf-8").read()
+        source = re.sub(r"\n?\s*<script type=\"application/ld\+json\">.*?</script>", "", source, flags=re.S)
+        if "<!-- build:ld -->" not in source:
+            source = source.replace("</head>", "    <!-- build:ld -->\n    <!-- /build:ld -->\n</head>", 1)
+        source = replace_block(source, "ld", render_ld(page, source))
         source = replace_block(source, "head", render_head(page))
         source = replace_block(source, "header", HEADER.format(app_store=APP_STORE))
         source = replace_block(source, "footer", FOOTER.format(email=EMAIL))
@@ -139,6 +197,7 @@ def main():
                 sys.exit(f"{page}: contains a forbidden dash {dash!r}")
         open(path, "w", encoding="utf-8").write(source)
         print("built", page)
+    open(os.path.join(SITE, "sitemap.xml"), "w", encoding="utf-8").write(sitemap())
 
 
 if __name__ == "__main__":
